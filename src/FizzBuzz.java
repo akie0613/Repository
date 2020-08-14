@@ -6,7 +6,8 @@ public class FizzBuzz {
         for (int i=1;i<41; i++){
             num[i-1] = i;
         }
-        //配列をstringに変換
+
+        //配列をstringに変換、3で割り切れるなら"Fizz"、5で割り切れるなら"Buzz"、両方で割り切れるなら"FizzBuzz"を代入する
         String [] num_s = new  String[40];
         for (int i=1;i<41; i++){
             if(num[i-1] % 15 == 0){
@@ -22,6 +23,7 @@ public class FizzBuzz {
                 num_s[i-1] = String.valueOf(num[i-1]);
             }
         }
+        //出力
         for (int i=0;i<40; i++){
             System.out.println(num_s[i]);
         }
