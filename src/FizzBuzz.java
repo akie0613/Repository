@@ -23,6 +23,7 @@ public class FizzBuzz {
                 num_s[i-1] = String.valueOf(num[i-1]);
             }
         }
+
         //出力
         for (int i=0;i<40; i++){
             System.out.println(num_s[i]);
