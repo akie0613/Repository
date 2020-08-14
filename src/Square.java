@@ -37,6 +37,5 @@ public class Square {
             System.out.println("数値を入力してください");
             return;
         }
-        System.out.println("入力された文字は「" + str + "」です");
     }
 }
