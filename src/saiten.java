@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 public class saiten {
     //2020/08/18 10:17~10:36
     public static void main(String[] args){
@@ -46,14 +50,16 @@ public class saiten {
     public static List<String> Read(String pass){
         List<String> textList = new ArrayList<>();
         try{
-            File file = new File(pass);
-            FileReader fr = new FileReader(file);
-            BufferedReader br = new BufferedReader(fr);
-            String text;
-            //txtの内容をlistに追加
-            while ((text = br.readLine()) != null) {
-                textList.add(text);
-            }
+//            File file = new File(pass);
+//            FileReader fr = new FileReader(file);
+//            BufferedReader br = new BufferedReader(fr);
+//            String text;
+//            //txtの内容をlistに追加
+//            while ((text = br.readLine()) != null) {
+//                textList.add(text);
+//            }
+            Path path = Paths.get(pass);
+            textList = Files.readAllLines(path, StandardCharsets.UTF_8);
 
             //指定したファイルが存在しない、アクセスできない場合、エラーメッセージを出力
         } catch (FileNotFoundException e) {
