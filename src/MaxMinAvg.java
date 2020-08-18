@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.charset.StandardCharsets;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 public class MaxMinAvg {
     //2020/08/18 13:02~13:30
     public static void main(String[] args){
@@ -15,7 +17,8 @@ public class MaxMinAvg {
         int max = 0;
         int min = 0;
         double avg;
-        double sum = 0;
+        //double sum = 0;
+        int sum = 0;
         for (int i = 0; i < textList.size(); i++) {
             int num = Integer.parseInt(textList.get(i));
             //ループ1回目のとき変数maxとminにそのまま値を入れる
@@ -33,10 +36,15 @@ public class MaxMinAvg {
             }
             sum = sum + num;
         }
-        avg = sum/ textList.size();
+        //avg = sum/ textList.size();
+        avg = (double)sum/ textList.size();
+        //少数第三位で四捨五入
+        avg = ((double)Math.round(avg * 100))/100;
+
         System.out.println("最大値："+ max);
         System.out.println("最小値："+ min);
-        System.out.println("平均値："+ String.format("%.2f", avg));
+        //System.out.println("平均値："+ String.format("%.2f", avg));
+        System.out.println("平均値："+  avg);
 
     }
     //ファイルを読込むメソッド
