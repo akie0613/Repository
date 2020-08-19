@@ -70,11 +70,7 @@ public class UnUseNum {
     public static void OutUsedNum(String path) throws IOException {
         //Readメソッドよりcsv読み込み
         List<String> textList = Read(path);
-        // FileWriterクラスのオブジェクトを生成する
-        FileWriter file = new FileWriter("C:\\Exercise\\UsedNum.txt");
-        // PrintWriterクラスのオブジェクトを生成する
-        PrintWriter pw = new PrintWriter(new BufferedWriter(file));
-        //1～9の数値をカウントする配列を作成
+
         int[] usedNum= new int[10];
         //一文字ずつ数値を読み込み配列の値を加算する。
         for (int i = 0; i < textList.size(); i++) {
@@ -86,6 +82,11 @@ public class UnUseNum {
             }
         }
         //出力
+        // FileWriterクラスのオブジェクトを生成する
+        FileWriter file = new FileWriter("C:\\Exercise\\UsedNum.txt");
+        // PrintWriterクラスのオブジェクトを生成する
+        PrintWriter pw = new PrintWriter(new BufferedWriter(file));
+        //1～9の数値をカウントする配列を作成
         for (int i = 0; i<10;i++) {
             pw.println(i+"：" + usedNum[i]);
         }
