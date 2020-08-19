@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Gyouretu {
     //2020/08/18 16:53~17:45、2020/08/19 9:06~17:26、
     public static void main(String[] args)  {
