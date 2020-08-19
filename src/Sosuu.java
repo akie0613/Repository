@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 public class Sosuu {
-    //2020/08/19 10:27~10:43
+    //2020/08/19 10:27~11:43
     public static void main(String[] args) throws IOException {
         outputSosuu();
         outputSosuu2();
